@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Data cache (large binary files)
+data/cache/
+data_cache/
+
+# IDE
+.vscode/
+.idea/
+
+# System
+*.swp
+.DS_Store
+Thumbs.db
+
+# Results
+results/*.html
+
+# QClaw
+qclaw/
+
+# Workbuddy
+workbuddy_*.md

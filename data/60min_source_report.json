@@ -1,0 +1,869 @@
+{
+  "metadata": {
+    "investigation_time": "2026-06-14 16:47:39",
+    "sample_size": 10,
+    "sources_tested": 4,
+    "lookback_days": 60
+  },
+  "summary": {
+    "ak_em_minute": {
+      "success": 0,
+      "fail": 10,
+      "success_rate": "0/10",
+      "common_errors": [
+        "ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+      ]
+    },
+    "ak_sina_minute": {
+      "success": 10,
+      "fail": 0,
+      "success_rate": "10/10",
+      "common_errors": []
+    },
+    "sina_direct": {
+      "success": 10,
+      "fail": 0,
+      "success_rate": "10/10",
+      "common_errors": []
+    },
+    "tushare_mins": {
+      "success": 0,
+      "fail": 10,
+      "success_rate": "0/10",
+      "common_errors": [
+        "Cannot init Tushare: ModuleNotFoundError"
+      ]
+    }
+  },
+  "recommendation": {
+    "primary": "sina_direct",
+    "reason": "sina_direct scored 93.3: success_rate=100%, avg 2000.0 rows in 1.5s, 6.0/6 fields complete",
+    "fallback": "ak_sina_minute",
+    "all_rankings": [
+      {
+        "source": "sina_direct",
+        "success_rate": 1.0,
+        "avg_rows": 2000.0,
+        "avg_time_sec": 1.5,
+        "avg_fields_complete": 6.0,
+        "score": 93.3
+      },
+      {
+        "source": "ak_sina_minute",
+        "success_rate": 1.0,
+        "avg_rows": 1970.0,
+        "avg_time_sec": 22.71,
+        "avg_fields_complete": 6.0,
+        "score": 80.9
+      },
+      {
+        "source": "ak_em_minute",
+        "success_rate": 0.0,
+        "avg_rows": 0.0,
+        "avg_time_sec": 0.0,
+        "avg_fields_complete": 0.0,
+        "score": 20.0
+      },
+      {
+        "source": "tushare_mins",
+        "success_rate": 0.0,
+        "avg_rows": 0.0,
+        "avg_time_sec": 0.0,
+        "avg_fields_complete": 0.0,
+        "score": 20.0
+      }
+    ]
+  },
+  "results": [
+    {
+      "source": "ak_em_minute",
+      "symbol": "000001",
+      "success": false,
+      "rows": 0,
+      "elapsed_sec": 0.56,
+      "error": "ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "columns": [],
+      "date_range": null
+    },
+    {
+      "source": "ak_sina_minute",
+      "symbol": "000001",
+      "success": true,
+      "rows": 1970,
+      "elapsed_sec": 37.4,
+      "error": null,
+      "columns": [
+        "amount",
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "date_range": {
+        "start": "2024-05-31 14:00:00",
+        "end": "2026-06-12 15:00:00"
+      },
+      "fields_complete": [
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "fields_missing": []
+    },
+    {
+      "source": "sina_direct",
+      "symbol": "000001",
+      "success": true,
+      "rows": 2000,
+      "elapsed_sec": 1.9,
+      "error": null,
+      "columns": [
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "date_range": {
+        "start": "2024-05-22 10:30:00",
+        "end": "2026-06-12 15:00:00"
+      },
+      "fields_complete": [
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "fields_missing": []
+    },
+    {
+      "source": "tushare_mins",
+      "symbol": "000001",
+      "success": false,
+      "rows": 0,
+      "elapsed_sec": 0.0,
+      "error": "Cannot init Tushare: ModuleNotFoundError",
+      "columns": [],
+      "date_range": null
+    },
+    {
+      "source": "ak_em_minute",
+      "symbol": "600000",
+      "success": false,
+      "rows": 0,
+      "elapsed_sec": 1.41,
+      "error": "ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "columns": [],
+      "date_range": null
+    },
+    {
+      "source": "ak_sina_minute",
+      "symbol": "600000",
+      "success": true,
+      "rows": 1970,
+      "elapsed_sec": 26.12,
+      "error": null,
+      "columns": [
+        "amount",
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "date_range": {
+        "start": "2024-05-31 14:00:00",
+        "end": "2026-06-12 15:00:00"
+      },
+      "fields_complete": [
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "fields_missing": []
+    },
+    {
+      "source": "sina_direct",
+      "symbol": "600000",
+      "success": true,
+      "rows": 2000,
+      "elapsed_sec": 1.32,
+      "error": null,
+      "columns": [
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "date_range": {
+        "start": "2024-05-22 10:30:00",
+        "end": "2026-06-12 15:00:00"
+      },
+      "fields_complete": [
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "fields_missing": []
+    },
+    {
+      "source": "tushare_mins",
+      "symbol": "600000",
+      "success": false,
+      "rows": 0,
+      "elapsed_sec": 0.0,
+      "error": "Cannot init Tushare: ModuleNotFoundError",
+      "columns": [],
+      "date_range": null
+    },
+    {
+      "source": "ak_em_minute",
+      "symbol": "300001",
+      "success": false,
+      "rows": 0,
+      "elapsed_sec": 1.38,
+      "error": "ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "columns": [],
+      "date_range": null
+    },
+    {
+      "source": "ak_sina_minute",
+      "symbol": "300001",
+      "success": true,
+      "rows": 1970,
+      "elapsed_sec": 13.26,
+      "error": null,
+      "columns": [
+        "amount",
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "date_range": {
+        "start": "2024-05-31 14:00:00",
+        "end": "2026-06-12 15:00:00"
+      },
+      "fields_complete": [
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "fields_missing": []
+    },
+    {
+      "source": "sina_direct",
+      "symbol": "300001",
+      "success": true,
+      "rows": 2000,
+      "elapsed_sec": 1.0,
+      "error": null,
+      "columns": [
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "date_range": {
+        "start": "2024-05-22 10:30:00",
+        "end": "2026-06-12 15:00:00"
+      },
+      "fields_complete": [
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "fields_missing": []
+    },
+    {
+      "source": "tushare_mins",
+      "symbol": "300001",
+      "success": false,
+      "rows": 0,
+      "elapsed_sec": 0.0,
+      "error": "Cannot init Tushare: ModuleNotFoundError",
+      "columns": [],
+      "date_range": null
+    },
+    {
+      "source": "ak_em_minute",
+      "symbol": "688001",
+      "success": false,
+      "rows": 0,
+      "elapsed_sec": 0.93,
+      "error": "ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "columns": [],
+      "date_range": null
+    },
+    {
+      "source": "ak_sina_minute",
+      "symbol": "688001",
+      "success": true,
+      "rows": 1970,
+      "elapsed_sec": 11.69,
+      "error": null,
+      "columns": [
+        "amount",
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "date_range": {
+        "start": "2024-05-31 14:00:00",
+        "end": "2026-06-12 15:00:00"
+      },
+      "fields_complete": [
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "fields_missing": []
+    },
+    {
+      "source": "sina_direct",
+      "symbol": "688001",
+      "success": true,
+      "rows": 2000,
+      "elapsed_sec": 1.41,
+      "error": null,
+      "columns": [
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "date_range": {
+        "start": "2024-05-22 10:30:00",
+        "end": "2026-06-12 15:00:00"
+      },
+      "fields_complete": [
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "fields_missing": []
+    },
+    {
+      "source": "tushare_mins",
+      "symbol": "688001",
+      "success": false,
+      "rows": 0,
+      "elapsed_sec": 0.0,
+      "error": "Cannot init Tushare: ModuleNotFoundError",
+      "columns": [],
+      "date_range": null
+    },
+    {
+      "source": "ak_em_minute",
+      "symbol": "000858",
+      "success": false,
+      "rows": 0,
+      "elapsed_sec": 0.89,
+      "error": "ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "columns": [],
+      "date_range": null
+    },
+    {
+      "source": "ak_sina_minute",
+      "symbol": "000858",
+      "success": true,
+      "rows": 1970,
+      "elapsed_sec": 28.55,
+      "error": null,
+      "columns": [
+        "amount",
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "date_range": {
+        "start": "2024-05-31 14:00:00",
+        "end": "2026-06-12 15:00:00"
+      },
+      "fields_complete": [
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "fields_missing": []
+    },
+    {
+      "source": "sina_direct",
+      "symbol": "000858",
+      "success": true,
+      "rows": 2000,
+      "elapsed_sec": 1.9,
+      "error": null,
+      "columns": [
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "date_range": {
+        "start": "2024-05-22 10:30:00",
+        "end": "2026-06-12 15:00:00"
+      },
+      "fields_complete": [
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "fields_missing": []
+    },
+    {
+      "source": "tushare_mins",
+      "symbol": "000858",
+      "success": false,
+      "rows": 0,
+      "elapsed_sec": 0.0,
+      "error": "Cannot init Tushare: ModuleNotFoundError",
+      "columns": [],
+      "date_range": null
+    },
+    {
+      "source": "ak_em_minute",
+      "symbol": "002001",
+      "success": false,
+      "rows": 0,
+      "elapsed_sec": 0.92,
+      "error": "ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "columns": [],
+      "date_range": null
+    },
+    {
+      "source": "ak_sina_minute",
+      "symbol": "002001",
+      "success": true,
+      "rows": 1970,
+      "elapsed_sec": 18.95,
+      "error": null,
+      "columns": [
+        "amount",
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "date_range": {
+        "start": "2024-05-31 14:00:00",
+        "end": "2026-06-12 15:00:00"
+      },
+      "fields_complete": [
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "fields_missing": []
+    },
+    {
+      "source": "sina_direct",
+      "symbol": "002001",
+      "success": true,
+      "rows": 2000,
+      "elapsed_sec": 1.66,
+      "error": null,
+      "columns": [
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "date_range": {
+        "start": "2024-05-22 10:30:00",
+        "end": "2026-06-12 15:00:00"
+      },
+      "fields_complete": [
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "fields_missing": []
+    },
+    {
+      "source": "tushare_mins",
+      "symbol": "002001",
+      "success": false,
+      "rows": 0,
+      "elapsed_sec": 0.0,
+      "error": "Cannot init Tushare: ModuleNotFoundError",
+      "columns": [],
+      "date_range": null
+    },
+    {
+      "source": "ak_em_minute",
+      "symbol": "600519",
+      "success": false,
+      "rows": 0,
+      "elapsed_sec": 1.5,
+      "error": "ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "columns": [],
+      "date_range": null
+    },
+    {
+      "source": "ak_sina_minute",
+      "symbol": "600519",
+      "success": true,
+      "rows": 1970,
+      "elapsed_sec": 30.24,
+      "error": null,
+      "columns": [
+        "amount",
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "date_range": {
+        "start": "2024-05-31 14:00:00",
+        "end": "2026-06-12 15:00:00"
+      },
+      "fields_complete": [
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "fields_missing": []
+    },
+    {
+      "source": "sina_direct",
+      "symbol": "600519",
+      "success": true,
+      "rows": 2000,
+      "elapsed_sec": 0.95,
+      "error": null,
+      "columns": [
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "date_range": {
+        "start": "2024-05-22 10:30:00",
+        "end": "2026-06-12 15:00:00"
+      },
+      "fields_complete": [
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "fields_missing": []
+    },
+    {
+      "source": "tushare_mins",
+      "symbol": "600519",
+      "success": false,
+      "rows": 0,
+      "elapsed_sec": 0.0,
+      "error": "Cannot init Tushare: ModuleNotFoundError",
+      "columns": [],
+      "date_range": null
+    },
+    {
+      "source": "ak_em_minute",
+      "symbol": "000002",
+      "success": false,
+      "rows": 0,
+      "elapsed_sec": 0.75,
+      "error": "ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "columns": [],
+      "date_range": null
+    },
+    {
+      "source": "ak_sina_minute",
+      "symbol": "000002",
+      "success": true,
+      "rows": 1970,
+      "elapsed_sec": 27.49,
+      "error": null,
+      "columns": [
+        "amount",
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "date_range": {
+        "start": "2024-05-31 14:00:00",
+        "end": "2026-06-12 15:00:00"
+      },
+      "fields_complete": [
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "fields_missing": []
+    },
+    {
+      "source": "sina_direct",
+      "symbol": "000002",
+      "success": true,
+      "rows": 2000,
+      "elapsed_sec": 1.84,
+      "error": null,
+      "columns": [
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "date_range": {
+        "start": "2024-05-22 10:30:00",
+        "end": "2026-06-12 15:00:00"
+      },
+      "fields_complete": [
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "fields_missing": []
+    },
+    {
+      "source": "tushare_mins",
+      "symbol": "000002",
+      "success": false,
+      "rows": 0,
+      "elapsed_sec": 0.0,
+      "error": "Cannot init Tushare: ModuleNotFoundError",
+      "columns": [],
+      "date_range": null
+    },
+    {
+      "source": "ak_em_minute",
+      "symbol": "601318",
+      "success": false,
+      "rows": 0,
+      "elapsed_sec": 1.41,
+      "error": "ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "columns": [],
+      "date_range": null
+    },
+    {
+      "source": "ak_sina_minute",
+      "symbol": "601318",
+      "success": true,
+      "rows": 1970,
+      "elapsed_sec": 18.28,
+      "error": null,
+      "columns": [
+        "amount",
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "date_range": {
+        "start": "2024-05-31 14:00:00",
+        "end": "2026-06-12 15:00:00"
+      },
+      "fields_complete": [
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "fields_missing": []
+    },
+    {
+      "source": "sina_direct",
+      "symbol": "601318",
+      "success": true,
+      "rows": 2000,
+      "elapsed_sec": 1.31,
+      "error": null,
+      "columns": [
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "date_range": {
+        "start": "2024-05-22 10:30:00",
+        "end": "2026-06-12 15:00:00"
+      },
+      "fields_complete": [
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "fields_missing": []
+    },
+    {
+      "source": "tushare_mins",
+      "symbol": "601318",
+      "success": false,
+      "rows": 0,
+      "elapsed_sec": 0.0,
+      "error": "Cannot init Tushare: ModuleNotFoundError",
+      "columns": [],
+      "date_range": null
+    },
+    {
+      "source": "ak_em_minute",
+      "symbol": "000333",
+      "success": false,
+      "rows": 0,
+      "elapsed_sec": 1.07,
+      "error": "ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "columns": [],
+      "date_range": null
+    },
+    {
+      "source": "ak_sina_minute",
+      "symbol": "000333",
+      "success": true,
+      "rows": 1970,
+      "elapsed_sec": 15.08,
+      "error": null,
+      "columns": [
+        "amount",
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "date_range": {
+        "start": "2024-05-31 14:00:00",
+        "end": "2026-06-12 15:00:00"
+      },
+      "fields_complete": [
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "fields_missing": []
+    },
+    {
+      "source": "sina_direct",
+      "symbol": "000333",
+      "success": true,
+      "rows": 2000,
+      "elapsed_sec": 1.71,
+      "error": null,
+      "columns": [
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "date_range": {
+        "start": "2024-05-22 10:30:00",
+        "end": "2026-06-12 15:00:00"
+      },
+      "fields_complete": [
+        "close",
+        "date",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "fields_missing": []
+    },
+    {
+      "source": "tushare_mins",
+      "symbol": "000333",
+      "success": false,
+      "rows": 0,
+      "elapsed_sec": 0.0,
+      "error": "Cannot init Tushare: ModuleNotFoundError",
+      "columns": [],
+      "date_range": null
+    }
+  ]
+}
