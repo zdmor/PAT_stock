@@ -485,3 +485,19 @@ Push all private WTOS branch work before final return.
 - `CI_STATUS=NO_BRANCH_CI_CONFIGURED`: repository exposes only `.github/workflows/daily-wtos-backup.yml`; no branch CI was triggered. Local full Runtime suites passed.
 - `REMAINING_BLOCKERS=CHATGPT_RUNTIME`: durable same-day WTOS-1->WTOS-3 handoff, compact immutable ChatGPT run record, formal source/fallback ownership, fresh automated VERIFIED account source, and real WTOS-3 validation after platform prompt remediation. `LOCAL_BUILD`: PIT data, local account binding, approved operational strategy, and local E2E acceptance. `USER/T-REVIEW`: approval/evidence before any strategy or provisional-measurement activation.
 - `ROLLBACK_ANCHOR=bf023c8bd98bd56723bdd6d2ebbb6a4425d3aad6`; `FINAL_RECOMMENDATION=review the corrected GitHub branch only as a non-live research-shadow improvement. Do not merge or activate until current ChatGPT Runtime validation, source qualification and required authority/strategy approvals are complete.`
+
+---
+
+## T-Review Fix Result — 2026-09-02
+
+- `FINAL_PRIVATE_COMMIT=3ff51d8c37637f9051f0941571657fa6d291dc36` on `review/wtos1-decision-architecture-v01-20260902-corrected`.
+- `GITHUB_PUSH=PASS`; `REMOTE_RETRIEVAL=PASS`: actual `zdmor/WTOS` branch head returned by `git ls-remote` is exactly `3ff51d8c37637f9051f0941571657fa6d291dc36`.
+- `FINDING_1=CLOSED`: only boolean `hard_gate=True` permits scan evaluation. `False` returns `BLOCKED_BY_HARD_GATE`; missing, UNKNOWN, non-bool, or malformed scan input returns `OPPORTUNITY_SET_UNRESOLVED` with explicit reason code.
+- `FINDING_2=CLOSED`: Mainline 60-day return now requires 61 completed observations for both sector and benchmark; exact 60/61 boundary tests added.
+- `FINDING_3=CLOSED`: market participation separately counts advances, declines and unchanged names; unchanged names are not treated as declines.
+- `FINDING_4=CLOSED`: persistence history requires source identity, decision-time-valid as-of, FRESH status and PIT-safe declaration. A prior CONFIRMED lifecycle state has equivalent provenance requirements before it can produce WEAKENING/LOST; otherwise MAINLINE is UNRESOLVED.
+- `FINDING_5=CLOSED`: run record material unknowns now include missing run identity, market blockers, unresolved Mainline blockers and unresolved opportunity reason codes. Malformed inputs are handled explicitly.
+- `FILES_CHANGED=runtime/src/decision_architecture_v01.py; runtime/tests/test_decision_architecture_v01.py; runtime/specs/WTOS1_DECISION_ARCHITECTURE_PROVISIONAL_V0_1.md.`
+- `TESTS=22 targeted PASS; Runtime root 213 PASS; acceptance 29 PASS; contract 37 PASS; integration 55 PASS; unit 89 PASS.`
+- `CI_STATUS=NO_BRANCH_CI_CONFIGURED`; no Live Authority, platform automation, schedule/enabled state, risk ceiling, Broker Write or Production Cutover was changed.
+- `MERGE_READINESS=FINDINGS_1_TO_5_CLOSED_FOR_REVIEW`; remaining review gates are source qualification, strategy/authority approval and non-live activation prohibition.
