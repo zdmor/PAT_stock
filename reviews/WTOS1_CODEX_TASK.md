@@ -501,3 +501,20 @@ Push all private WTOS branch work before final return.
 - `TESTS=22 targeted PASS; Runtime root 213 PASS; acceptance 29 PASS; contract 37 PASS; integration 55 PASS; unit 89 PASS.`
 - `CI_STATUS=NO_BRANCH_CI_CONFIGURED`; no Live Authority, platform automation, schedule/enabled state, risk ceiling, Broker Write or Production Cutover was changed.
 - `MERGE_READINESS=FINDINGS_1_TO_5_CLOSED_FOR_REVIEW`; remaining review gates are source qualification, strategy/authority approval and non-live activation prohibition.
+
+---
+
+## Final Fail-Closed Fix Result — 2026-09-02
+
+- `PRIVATE_BRANCH=review/wtos1-decision-architecture-v01-20260902-corrected`; `FINAL_COMMIT=ad1dd92b62a04f388aad825965118694643caa53`; based on actual GitHub `main=bf023c8bd98bd56723bdd6d2ebbb6a4425d3aad6`.
+- `PUSH=PASS`; `REMOTE_RETRIEVAL=PASS`: `git ls-remote` returned exactly `ad1dd92b62a04f388aad825965118694643caa53` for the private branch.
+- `FIX_1=CLOSED`: market scan now requires `trading_day is True`; missing/UNKNOWN/non-bool is `UNRESOLVED`.
+- `FIX_2=CLOSED`: every supplied universe record requires explicit boolean eligibility; unclassified or malformed records are `UNRESOLVED`.
+- `FIX_3=CLOSED`: PIT constituents require explicit boolean `suspended`, `is_st`, and `new_listing`; unknown status is `UNRESOLVED`.
+- `FIX_4=CLOSED`: sector and benchmark price/RS layers require typed source identity, valid as-of no later than decision, `FRESH`, and PIT-safe declarations.
+- `FIX_5=CLOSED`: `CONFIRMED` requires a complete five-observation PIT history; shorter persistence is `UNRESOLVED`. The 3-of-5 boundary is tested.
+- `FIX_6=CLOSED`: market/mainline non-dict, non-list, invalid date/source, malformed universe/member and malformed scan inputs fail closed without raising.
+- `FILES_CHANGED=runtime/src/decision_architecture_v01.py; runtime/tests/test_decision_architecture_v01.py; runtime/specs/WTOS1_DECISION_ARCHITECTURE_PROVISIONAL_V0_1.md.`
+- `TESTS=25 targeted PASS; Runtime root 216 PASS; acceptance 29 PASS; contract 37 PASS; integration 55 PASS; unit 89 PASS.`
+- `CI_STATUS=NO_BRANCH_CI_CONFIGURED`; no active authority, main, platform automation, schedule/enabled state, risk ceiling, Broker Write or Production Cutover changed.
+- `FINAL_DISPOSITION=FINDINGS_1_TO_6_CLOSED_FOR_THIS_BRANCH`; remaining activation blockers are unchanged source qualification, strategy/authority approval, durable current ChatGPT handoff/run record, and non-live policy gates.
