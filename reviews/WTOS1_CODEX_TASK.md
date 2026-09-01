@@ -450,8 +450,8 @@ Push all private WTOS branch work before final return.
 - `BASELINE_MAIN_SHA=e7db8ae14fafac2732f7d0669446253af5fa29b9`
 - `WORK_BRANCH=review/wtos1-decision-architecture-v01-20260901`
 - `FINAL_BRANCH_SHA=7a0922c415a3714af18bb9dc7b60546546a53185`
-- `GITHUB_AUTH=FAIL` (`gh` is unavailable and the configured private WTOS origin is a local mirror path, so GitHub private-remote authentication was not independently verified.)
-- `FETCH=PASS`; `PUSH=PASS` to configured WTOS origin `D:/Projects/WTOS_rebuild`.
+- `GITHUB_AUTH=PASS` (authenticated GitHub push of this result record succeeded; `gh` is unavailable.)
+- `FETCH=PASS`; `PUSH=PASS` to configured WTOS origin `D:/Projects/WTOS_rebuild` and this public task carrier. The private WTOS origin is a local mirror path, so its final GitHub replication is not independently verifiable from this checkout.
 - `SYSTEM_VERDICT=Current WTOS Core has deterministic Executor mechanics, but has no current ChatGPT runtime tree and lacks machine market-state, mainline, scan-lifecycle, and strategy-generation semantics. No Live Authority was changed.`
 - `WTOS1_CURRENT_ARCHITECTURE_GAPS=missing runtime/chatgpt resolver files; formal PIT source binding; read-only account source; approved Trend/Setup/Entry/Invalidation/Payoff algorithm; market-permission multipliers; historical semantic equivalence.`
 - `MARKET_STATE_V0_1=PROVISIONAL_MEASUREMENT_V0.1`: daily frozen PIT bundle, two broad indices, `Close/MA20/MA60/MA200`, eligible-stock breadth above MA20/60, advance-decline participation, and 5d/20d turnover. `RISK_ON` requires cross-index UP, structural confirmation, breadth/participation positive and ratio >=1; `RISK_OFF` requires converse confirmation and ratio <1; otherwise MIXED. Missing/stale/conflicting/non-trading-day/lookahead data is UNRESOLVED. It is not Market Permission.
