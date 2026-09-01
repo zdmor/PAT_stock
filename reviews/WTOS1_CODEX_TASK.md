@@ -442,3 +442,30 @@ Final report must include:
 Do not report secrets. Do not claim Current changed. Do not claim Live Authority changed. Do not claim Production Cutover.
 
 Push all private WTOS branch work before final return.
+
+---
+
+## Execution Result — 2026-09-02
+
+- `BASELINE_MAIN_SHA=e7db8ae14fafac2732f7d0669446253af5fa29b9`
+- `WORK_BRANCH=review/wtos1-decision-architecture-v01-20260901`
+- `FINAL_BRANCH_SHA=7a0922c415a3714af18bb9dc7b60546546a53185`
+- `GITHUB_AUTH=FAIL` (`gh` is unavailable and the configured private WTOS origin is a local mirror path, so GitHub private-remote authentication was not independently verified.)
+- `FETCH=PASS`; `PUSH=PASS` to configured WTOS origin `D:/Projects/WTOS_rebuild`.
+- `SYSTEM_VERDICT=Current WTOS Core has deterministic Executor mechanics, but has no current ChatGPT runtime tree and lacks machine market-state, mainline, scan-lifecycle, and strategy-generation semantics. No Live Authority was changed.`
+- `WTOS1_CURRENT_ARCHITECTURE_GAPS=missing runtime/chatgpt resolver files; formal PIT source binding; read-only account source; approved Trend/Setup/Entry/Invalidation/Payoff algorithm; market-permission multipliers; historical semantic equivalence.`
+- `MARKET_STATE_V0_1=PROVISIONAL_MEASUREMENT_V0.1`: daily frozen PIT bundle, two broad indices, `Close/MA20/MA60/MA200`, eligible-stock breadth above MA20/60, advance-decline participation, and 5d/20d turnover. `RISK_ON` requires cross-index UP, structural confirmation, breadth/participation positive and ratio >=1; `RISK_OFF` requires converse confirmation and ratio <1; otherwise MIXED. Missing/stale/conflicting/non-trading-day/lookahead data is UNRESOLVED. It is not Market Permission.
+- `MAINLINE_V0_1=PROVISIONAL_MEASUREMENT_V0.1`: versioned taxonomy/PIT membership, sector trend, 20d/60d excess return, constituent breadth, turnover, and 3-of-5 persistence. Lifecycle is EMERGING/CONFIRMED/WEAKENING/LOST/UNRESOLVED; DAILY_THEME cannot confirm in one day; parent state is context only; missing PIT or adjustment lookahead is UNRESOLVED.
+- `ACTIVE_OPPORTUNITY_FUNNEL=UNIVERSE->DISCOVERED->RESEARCH->PRIORITY_WATCH->BUY_READY->PLAN_CANDIDATE->AUTHORIZED`; output preserves `NO_VALID_OPPORTUNITY`, `CANDIDATE_NOT_ACTIONABLE`, `BLOCKED_BY_HARD_GATE`, and `OPPORTUNITY_SET_UNRESOLVED`, with owned WHY_NOT_BUY codes. Candidate remains distinct from Authorized.
+- `SETUP_ENTRY_INVALIDATION_PAYOFF_STATUS=PROVISIONAL_INPUT_CONTRACT`: no fields are invented; Entry -> Invalidation -> Risk -> Size remains existing Core behavior; `PAYOFF_UNKNOWN` cannot authorize a plan; no universal RR threshold was added.
+- `SOURCE_QUALIFICATION=all candidate sources remain non-authority until PIT safety, freshness, replay, access, missing fields, and failure modes are qualified; account source remains BLOCKED_EXTERNAL.`
+- `HISTORICAL_REUSE=REUSED`: active scan discipline, lifecycle, WHY_NOT_BUY, Candidate != Plan != Position, and decision-time integrity. `REJECTED`: 11-engine runtime, old score thresholds, old strategies as authority, and frozen state promotion.
+- `CODE_CHANGED=runtime/src/decision_architecture_v01.py`; `TESTS_ADDED=runtime/tests/test_decision_architecture_v01.py`; `PROMPT_PROPOSAL_PATH=runtime/specs/WTOS1_DECISION_ARCHITECTURE_PROVISIONAL_V0_1.md`.
+- `TEST_RESULTS=11 new v0.1 tests PASS; 202 Runtime root tests PASS.` `CI_STATUS=local PASS; remote CI not run.`
+- `RUN_RECORD_PROPOSAL=run_id, trade_date, decision_time, authority_identity, material_source_ids, material_unknowns, market_state, mainline_states, opportunity_scan_status, candidate_ids, plan_id, gate_results, final_action, WTOS1->WTOS3 inheritance identity.`
+- `FILES_CHANGED=runtime/src/decision_architecture_v01.py; runtime/tests/test_decision_architecture_v01.py; runtime/specs/WTOS1_DECISION_ARCHITECTURE_PROVISIONAL_V0_1.md.`
+- `COMMITS=7a0922c Add provisional WTOS-1 decision architecture.` `ROLLBACK_ANCHOR=e7db8ae14fafac2732f7d0669446253af5fa29b9.`
+- `UNRESOLVED_BLOCKERS=EXTERNAL`: formal PIT market/account sources and GitHub private-remote verification. `USER/T-SESSION`: approval/evidence for strategy algorithm, risk parameters, and activation.
+- `WHAT_REQUIRES_T_REVIEW_BEFORE_MAIN=source qualification, v0.1 formula/evidence review, strategy approval, and GitHub remote validation.`
+- `WHAT_MUST_NOT_BE_ACTIVATED_YET=all provisional market/mainline measurements, strategy rules, market-permission linkage, broker write, production cutover.`
+- `FINAL_RECOMMENDATION=review the branch as a research-shadow architecture improvement; do not merge or activate until the listed authority, source, and strategy gates are independently satisfied.`
