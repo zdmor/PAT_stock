@@ -518,3 +518,13 @@ Push all private WTOS branch work before final return.
 - `TESTS=25 targeted PASS; Runtime root 216 PASS; acceptance 29 PASS; contract 37 PASS; integration 55 PASS; unit 89 PASS.`
 - `CI_STATUS=NO_BRANCH_CI_CONFIGURED`; no active authority, main, platform automation, schedule/enabled state, risk ceiling, Broker Write or Production Cutover changed.
 - `FINAL_DISPOSITION=FINDINGS_1_TO_6_CLOSED_FOR_THIS_BRANCH`; remaining activation blockers are unchanged source qualification, strategy/authority approval, durable current ChatGPT handoff/run record, and non-live policy gates.
+---
+
+## Opportunity Eligibility Fail-Closed Fix Result — 2026-09-02
+
+- `FINAL_BRANCH=review/wtos1-decision-architecture-v01-20260902-corrected`; `FINAL_BRANCH_SHA=d821a9d205ba7831346b402a94a96c98e8ad54cc`.
+- `REMOTE_RETRIEVAL=PASS`: GitHub Git Data API ref resolution returned `d821a9d205ba7831346b402a94a96c98e8ad54cc`; its parent is `ad1dd92b62a04f388aad825965118694643caa53`; both uploaded file byte streams were independently verified against the local tested files.
+- `FINDING_7=CLOSED`: opportunity funnel validates every supplied universe item before scanning. Missing, `None`, `UNKNOWN`, or non-boolean `eligible` and malformed items return `OPPORTUNITY_SET_UNRESOLVED` with deterministic reason codes. Explicit `eligible=False` remains a valid exclusion, and an all-false classified universe returns `NO_VALID_OPPORTUNITY`.
+- `FILES_CHANGED=runtime/src/decision_architecture_v01.py; runtime/tests/test_decision_architecture_v01.py.`
+- `TESTS=21 targeted PASS; Runtime root 217 PASS; acceptance 29 PASS; contract 37 PASS; integration 55 PASS; unit 89 PASS.`
+- `TRANSPORT_NOTE=github.com:443 Git HTTPS was unavailable; upload and verification used authenticated api.github.com Git Data REST API. No authority, automation, schedule, risk, Broker Write, Production Cutover, or main change was made.`
