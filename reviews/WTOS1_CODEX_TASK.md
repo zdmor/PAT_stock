@@ -469,3 +469,19 @@ Push all private WTOS branch work before final return.
 - `WHAT_REQUIRES_T_REVIEW_BEFORE_MAIN=source qualification, v0.1 formula/evidence review, strategy approval, and GitHub remote validation.`
 - `WHAT_MUST_NOT_BE_ACTIVATED_YET=all provisional market/mainline measurements, strategy rules, market-permission linkage, broker write, production cutover.`
 - `FINAL_RECOMMENDATION=review the branch as a research-shadow architecture improvement; do not merge or activate until the listed authority, source, and strategy gates are independently satisfied.`
+
+---
+
+## Corrected Execution Result — 2026-09-02
+
+- `ACTUAL_GITHUB_MAIN_SHA=bf023c8bd98bd56723bdd6d2ebbb6a4425d3aad6`; the prior baseline was stale and is superseded.
+- `CORRECTED_WORK_BRANCH=review/wtos1-decision-architecture-v01-20260902-corrected`.
+- `CORRECTED_FINAL_COMMIT=e4f2cf15825800a7b33d03b9bd33ea1f5d5df3be` (includes transplanted predecessor `f11919a`).
+- `GITHUB_PUSH=PASS`; `REMOTE_VERIFICATION=PASS`: `git ls-remote https://github.com/zdmor/WTOS.git refs/heads/review/wtos1-decision-architecture-v01-20260902-corrected` returned exactly `e4f2cf15825800a7b33d03b9bd33ea1f5d5df3be`.
+- `CORRECTED_SYSTEM_VERDICT=Current user-facing WTOS is the operational ChatGPT WTOS-1/WTOS-3 automation runtime, not the future local deterministic Core. Current ChatGPT Runtime files, platform snapshot, source hierarchy, output contract and gaps were re-resolved from actual GitHub main. No Current state, Live Authority, automation, schedule, risk ceiling, Broker Write or Production Cutover was changed.`
+- `CODE_CHANGED=runtime/src/decision_architecture_v01.py` now rejects nonnumeric Entry/MaxBuy/Invalidation as non-actionable; `runtime/specs/WTOS1_DECISION_ARCHITECTURE_PROVISIONAL_V0_1.md` now explicitly identifies the module as future-local research shadow rather than current ChatGPT Runtime; `runtime/tests/test_chatgpt_runtime_contract.py` adds current-runtime regression checks.
+- `FILES_CHANGED=runtime/src/decision_architecture_v01.py; runtime/tests/test_decision_architecture_v01.py; runtime/tests/test_chatgpt_runtime_contract.py; runtime/specs/WTOS1_DECISION_ARCHITECTURE_PROVISIONAL_V0_1.md.`
+- `TESTS=17 targeted tests PASS; Runtime root suite 208 PASS; acceptance 29 PASS; contract 37 PASS; integration 55 PASS; unit 89 PASS.`
+- `CI_STATUS=NO_BRANCH_CI_CONFIGURED`: repository exposes only `.github/workflows/daily-wtos-backup.yml`; no branch CI was triggered. Local full Runtime suites passed.
+- `REMAINING_BLOCKERS=CHATGPT_RUNTIME`: durable same-day WTOS-1->WTOS-3 handoff, compact immutable ChatGPT run record, formal source/fallback ownership, fresh automated VERIFIED account source, and real WTOS-3 validation after platform prompt remediation. `LOCAL_BUILD`: PIT data, local account binding, approved operational strategy, and local E2E acceptance. `USER/T-REVIEW`: approval/evidence before any strategy or provisional-measurement activation.
+- `ROLLBACK_ANCHOR=bf023c8bd98bd56723bdd6d2ebbb6a4425d3aad6`; `FINAL_RECOMMENDATION=review the corrected GitHub branch only as a non-live research-shadow improvement. Do not merge or activate until current ChatGPT Runtime validation, source qualification and required authority/strategy approvals are complete.`
